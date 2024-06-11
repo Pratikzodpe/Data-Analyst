@@ -1,0 +1,80 @@
+CREATE DATABASE Shubham;
+USE Shubham;
+
+CREATE TABLE Emp_PK(
+Emp_ID INT PRIMARY KEY,
+Name VARCHAR(100)
+);
+
+INSERT INTO Emp_PK
+VALUES(1,"A"),(2,"B"),(3,"C"),(4,"D"),(5,"E");
+
+SELECT*FROM Emp_PK;
+
+CREATE TABLE Dept2(
+Dept2_ID INT PRIMARY KEY,
+Dept2_Name VARCHAR(100),
+EID INT,
+FOREIGN KEY(EID)REFERENCES Emp_PK(Emp_ID)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
+INSERT INTO Dept2
+VALUES(101,"HR",5),(102,"Marketing",1),(103,"Finance",4);
+
+SELECT*FROM Dept2;
+
+INSERT INTO Dept2
+VALUES(104,"Operations",10);
+
+UPDATE Emp_PK
+SET Emp_ID=500
+WHERE Emp_ID=5;
+
+SELECT*FROM Emp_PK;
+SELECT*FROM Dept2;
+
+DELETE FROM Emp_PK WHERE Emp_ID=500;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+CREATE DATABASE Shubham;
+USE Shubham;
+
+CREATE TABLE Emp_PK(
+Emp_ID INT PRIMARY KEY,
+Name VARCHAR(100)
+);
+
+INSERT INTO Emp_PK
+VALUES(1,"A"),(2,"B"),(3,"C"),(4,"D"),(5,"E");
+
+SELECT*FROM Emp_PK;
+
+CREATE TABLE Dept2(
+Dept2_ID INT PRIMARY KEY,
+Dept2_Name VARCHAR(100),
+EID INT,
+FOREIGN KEY(EID)REFERENCES Emp_PK(Emp_ID)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
+INSERT INTO Dept2
+VALUES(101,"HR",5),(102,"Marketing",1),(103,"Finance",4);
+
+SELECT*FROM Dept2;
+
+INSERT INTO Dept2
+VALUES(104,"Operations",10);
+
+UPDATE Emp_PK
+SET Emp_ID=500
+WHERE Emp_ID=5;
+
+SELECT*FROM Emp_PK;
+SELECT*FROM Dept2;
+
+DELETE FROM Emp_PK WHERE Emp_ID=500;
+
